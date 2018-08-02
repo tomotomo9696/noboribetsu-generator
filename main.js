@@ -64,7 +64,7 @@ class Noboribetsu {
     this.defaultFont;
     this.font;
     $.get("./fonts/Gen_Shin_Gothic_Monospace_Bold.json").then((d) => {
-      this.defaultFont = new THREE.Font(JSON.parse(d));
+      this.defaultFont = new THREE.Font( typeof d === "string" ? JSON.parse(d) : d );
       cb();
     });
 
